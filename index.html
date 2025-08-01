@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧靈籤問事系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="temple-decoration left">🏮</div>
+            <div class="title-container">
+                <h1 data-text="智慧靈籤問事系統">🏛️ 智慧靈籤問事系統 🏛️</h1>
+                <p class="subtitle">虔誠問卜　神明指引　誠心得應</p>
+            </div>
+            <div class="temple-decoration right">🏮</div>
+        </header>
+
+        <main>
+            <!-- 問事階段 -->
+            <section id="question-section" class="section active">
+                <h2>恭請神明慈悲　降旨指引迷津</h2>
+                <p class="instruction">請將欲問之事於心中默念三遍，誠心稟告神明，而後點擊下方按鈕開始擲筊問卜。問事須專一，心誠則靈。</p>
+                <button id="start-divination" class="btn primary">開始擲筊問卜</button>
+            </section>
+
+            <!-- 擲筊階段 -->
+            <section id="divination-section" class="section">
+                <h2>擲筊確認　神意明示</h2>
+                <div id="divination-result" class="result-area">
+                    <p>恭候神明降旨中...</p>
+                </div>
+                <div id="divination-controls" class="controls">
+                    <button id="throw-jiao" class="btn primary">虔誠擲筊</button>
+                    <button id="retry-divination" class="btn warning" style="display: none;">🔄 重新聚焦問題</button>
+                </div>
+            </section>
+
+            <!-- 問題領域選擇 -->
+            <section id="category-section" class="section">
+                <h2>請明示問事之領域</h2>
+                <div class="category-grid">
+                    <button class="category-btn" data-category="事業">💼 事業前程</button>
+                    <button class="category-btn" data-category="愛情">💕 姻緣情事</button>
+                    <button class="category-btn" data-category="健康">🏥 身體康泰</button>
+                    <button class="category-btn" data-category="財運">💰 財運投資</button>
+                    <button class="category-btn" data-category="學業">📚 學業功名</button>
+                    <button class="category-btn" data-category="家庭">🏠 家庭和睦</button>
+                </div>
+            </section>
+
+            <!-- 個人資訊輸入 -->
+            <section id="info-section" class="section">
+                <h2>請示告基本資訊　以利神明察知</h2>
+                <form id="user-info-form" class="form">
+                    <div class="form-group">
+                        <label for="age">年歲：</label>
+                        <input type="number" id="age" min="1" max="120" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">性別：</label>
+                        <select id="gender" required>
+                            <option value="">請擇選</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="occupation">職業：</label>
+                        <input type="text" id="occupation" placeholder="例：學子、商賈、公職..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="question-detail">具體問事（可略）：</label>
+                        <textarea id="question-detail" placeholder="請簡述欲請示之具體問題..." rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">恭請抽取靈籤</button>
+                </form>
+            </section>
+
+            <!-- 抽籤結果 -->
+            <section id="result-section" class="section">
+                <h2>靈籤解析　神明指引</h2>
+                <div id="fortune-result" class="fortune-content">
+                    <!-- 籤詩內容將在這裡顯示 -->
+                </div>
+                <div class="controls">
+                    <button id="restart-divination" class="btn restart">🔁 重新問卜</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>⚠️ 信受隨緣：籤詩帶有啟示與指引性質，最終決策仍掌握於自身<br>敬請明鑑</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
